@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm, cozy editorial palette: toasted cream, cocoa, terracotta and olive. */
+    --background: 34 30% 90%;
+    --foreground: 25 28% 16%;
+    --card: 35 34% 94%;
+    --card-foreground: 25 28% 16%;
+    --popover: 35 34% 94%;
+    --popover-foreground: 25 28% 16%;
+    --primary: 18 61% 39%;
+    --primary-foreground: 35 38% 96%;
+    --secondary: 33 27% 84%;
+    --secondary-foreground: 25 28% 18%;
+    --muted: 33 27% 84%;
+    --muted-foreground: 27 20% 37%;
+    --accent: 40 48% 72%;
+    --accent-foreground: 25 28% 16%;
+    --destructive: 3 62% 44%;
+    --destructive-foreground: 35 38% 96%;
+    --border: 29 23% 72%;
+    --input: 29 23% 68%;
+    --ring: 18 61% 39%;
+    --chart-1: 18 61% 39%; --chart-2: 92 25% 32%; --chart-3: 40 60% 42%; --chart-4: 13 39% 45%; --chart-5: 29 48% 47%;
+    --radius: 0.9rem;
+    --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 35 34% 94%; --sidebar-foreground: 25 28% 16%; --sidebar-primary: 18 61% 39%; --sidebar-primary-foreground: 35 38% 96%; --sidebar-accent: 33 27% 84%; --sidebar-accent-foreground: 25 28% 16%; --sidebar-border: 29 23% 72%; --sidebar-ring: 18 61% 39%;
+    --teal-50: 34 30% 92%; --teal-100: 33 27% 86%; --teal-200: 29 23% 77%; --teal-300: 24 41% 61%; --teal-400: 19 53% 47%; --teal-500: 18 61% 39%; --teal-600: 17 64% 34%; --teal-700: 16 62% 29%; --teal-800: 24 37% 23%; --teal-900: 25 28% 16%;
+    --cyan-400: 87 23% 39%; --cyan-500: 88 26% 33%;
+    --orange-400: 27 68% 52%; --orange-500: 21 65% 44%; --orange-600: 18 61% 38%;
+    --yellow-200: 42 48% 83%; --yellow-300: 41 53% 73%; --yellow-400: 40 60% 55%; --yellow-500: 38 60% 45%; --yellow-600: 36 55% 37%; --yellow-700: 33 44% 29%;
+    --slate-50: 35 34% 94%; --slate-100: 34 30% 90%; --slate-200: 33 27% 84%; --slate-300: 29 23% 72%; --slate-400: 27 16% 53%; --slate-500: 27 20% 37%; --slate-600: 25 23% 29%; --slate-700: 25 25% 23%; --slate-800: 25 27% 19%; --slate-900: 25 28% 16%;
+  }
+  .dark {
+    --background: 25 18% 10%;
+    --foreground: 35 31% 93%;
+    --card: 25 18% 14%;
+    --card-foreground: 35 31% 93%;
+    --popover: 25 18% 14%;
+    --popover-foreground: 35 31% 93%;
+    --primary: 24 67% 61%;
+    --primary-foreground: 25 20% 11%;
+    --secondary: 25 18% 20%;
+    --secondary-foreground: 35 31% 93%;
+    --muted: 25 18% 20%;
+    --muted-foreground: 32 18% 74%;
+    --accent: 83 20% 25%;
+    --accent-foreground: 35 31% 93%;
+    --destructive: 4 65% 60%; --destructive-foreground: 25 20% 11%;
+    --border: 28 18% 29%; --input: 28 18% 29%; --ring: 24 67% 61%;
+    --chart-1: 24 67% 61%; --chart-2: 89 28% 50%; --chart-3: 40 70% 58%; --chart-4: 14 45% 62%; --chart-5: 30 62% 60%;
+    --sidebar-background: 25 18% 14%; --sidebar-foreground: 35 31% 93%; --sidebar-primary: 24 67% 61%; --sidebar-primary-foreground: 25 20% 11%; --sidebar-accent: 25 18% 20%; --sidebar-accent-foreground: 35 31% 93%; --sidebar-border: 28 18% 29%; --sidebar-ring: 24 67% 61%;
+    --teal-50: 25 18% 14%; --teal-100: 25 18% 19%; --teal-200: 27 19% 26%; --teal-300: 25 45% 44%; --teal-400: 24 58% 53%; --teal-500: 24 67% 61%; --teal-600: 23 66% 55%; --teal-700: 21 59% 47%; --teal-800: 25 43% 37%; --teal-900: 25 28% 25%;
+    --cyan-400: 88 30% 56%; --cyan-500: 88 32% 47%;
+    --orange-400: 28 75% 61%; --orange-500: 23 70% 55%; --orange-600: 20 64% 49%;
+    --yellow-200: 40 31% 25%; --yellow-300: 40 38% 34%; --yellow-400: 40 55% 48%; --yellow-500: 39 68% 56%; --yellow-600: 37 61% 49%; --yellow-700: 35 48% 41%;
+    --slate-50: 25 18% 14%; --slate-100: 25 18% 17%; --slate-200: 25 18% 20%; --slate-300: 28 18% 29%; --slate-400: 31 17% 51%; --slate-500: 32 18% 64%; --slate-600: 33 20% 73%; --slate-700: 34 24% 82%; --slate-800: 35 28% 88%; --slate-900: 35 31% 93%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  body {
+    min-height: 100vh;
+    background-image: radial-gradient(circle at 8% 0%, hsl(var(--primary) / .07), transparent 26%), radial-gradient(circle at 92% 8%, hsl(var(--yellow-400) / .05), transparent 22%);
+  }
+}
+
+/* Fast, compositor-friendly route transitions. No exit/wait phase means navigation never pauses before the next page renders. */
+@keyframes gradbound-page-enter {
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.page-transition {
+  animation: gradbound-page-enter 160ms ease-out both;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
+/* Dark-mode contrast guardrails for legacy utility classes used across the home experience. */
+.dark .text-slate-400, .dark .text-slate-500, .dark .text-slate-600 { color: hsl(var(--muted-foreground)) !important; }
+.dark .text-slate-300 { color: hsl(var(--foreground)) !important; }
+.dark .text-slate-200 { color: hsl(var(--foreground)) !important; }
+.dark .bg-white, .dark .bg-white\/80, .dark .bg-white\/85, .dark .bg-white\/70 { background-color: hsl(var(--card)) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  .gradient-text { @apply bg-gradient-to-r from-teal-500 via-cyan-400 to-orange-400 bg-clip-text text-transparent; }
+  .glass-card { @apply border border-yellow-950/10 bg-stone-50/75 backdrop-blur-xl dark:border-teal-200/10 dark:bg-stone-950/75; }
+}
+
+.hero-orb { position:absolute; border-radius:9999px; filter:blur(60px); pointer-events:none; }
+.hero-orb-one { width:32rem; height:32rem; right:-12rem; top:-10rem; background:rgba(31,84,85,.16); }
+.hero-orb-two { width:24rem; height:24rem; left:-14rem; bottom:-8rem; background:rgba(156,71,34,.12); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-orb-one { animation: float-orb 10s ease-in-out infinite; }
+  .hero-orb-two { animation: float-orb 13s ease-in-out infinite reverse; }
+}
+@keyframes float-orb { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(0,18px,0) scale(1.04); } }
+
+
+/* Interaction polish */
+[data-radix-select-viewport] {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+input, textarea, button, [role="combobox"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, textarea, select, [role="combobox"] {
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus, [role="combobox"]:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.16);
+}
+
+[data-radix-select-content], [data-radix-popper-content-wrapper] {
+  z-index: 100 !important;
+}
+
+[data-radix-select-viewport] {
+  max-height: min(18rem, 45vh);
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+* {
+  scrollbar-color: hsl(var(--primary) / .35) transparent;
+}
+
+::selection {
+  background: hsl(var(--primary) / .22);
+}
+
+.footer-signature {
+  animation: footer-rise 0.7s ease-out both;
+}
+
+@keyframes footer-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes page-glow {
+  from { opacity: 0; transform: translateY(12px) scale(.995); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.page-stagger > * { animation: page-glow .55s cubic-bezier(.22,1,.36,1) both; }
+.page-stagger > *:nth-child(2) { animation-delay: .05s; }
+.page-stagger > *:nth-child(3) { animation-delay: .1s; }
+.page-stagger > *:nth-child(4) { animation-delay: .15s; }
+.page-stagger > *:nth-child(5) { animation-delay: .2s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-orb { animation-duration: 12s; }
+}
+
+.priority-range {
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: hsl(var(--secondary));
+  cursor: pointer;
+}
+.priority-range::-webkit-slider-thumb { appearance: none; width: 18px; height: 18px; border-radius: 999px; background: hsl(var(--primary)); border: 3px solid hsl(var(--card)); box-shadow: 0 1px 4px hsl(var(--foreground) / .18); }
+.priority-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 999px; background: hsl(var(--primary)); border: 3px solid hsl(var(--card)); box-shadow: 0 1px 4px hsl(var(--foreground) / .18); }
+.priority-range:focus-visible { outline: none; box-shadow: 0 0 0 3px hsl(var(--primary) / .18); }
+
+/* Warm theme readability: keep legacy slate utilities legible after theme switching. */
+.dark .text-slate-500, .dark .text-slate-400, .dark .text-slate-600, .dark .text-slate-700 { color: hsl(var(--muted-foreground)) !important; }
+.dark .text-slate-900, .dark .text-slate-800 { color: hsl(var(--foreground)) !important; }
+.dark .bg-white, .dark .bg-slate-50 { background-color: hsl(var(--card)) !important; }
+.dark .border-slate-200, .dark .border-slate-300, .dark .border-slate-800 { border-color: hsl(var(--border)) !important; }
+
+/* University card typography: preserve words and keep every card header the same height. */
+.university-name {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+/* The Why Gradbound section is intentionally dark in both themes, so its copy always stays bright. */
+.why-gradbound-copy { color: rgba(255,255,255,.88) !important; }
+.why-gradbound-item { color: rgba(255,255,255,.92) !important; }
+
+/* Warm, compact numeric controls that feel native to the GradBound UI. */
+.numeric-stepper { position: relative; width: 100%; }
+.numeric-stepper-input { appearance: textfield; }
+.numeric-stepper-input::-webkit-inner-spin-button,
+.numeric-stepper-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.numeric-stepper-controls {
+  position: absolute;
+  right: .35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: .2rem;
+  padding: .2rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: .65rem;
+  background: hsl(var(--secondary) / .72);
+  box-shadow: 0 1px 3px hsl(var(--foreground) / .06);
+}
+.numeric-stepper-button {
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: .45rem;
+  color: hsl(var(--foreground));
+  transition: transform .18s ease, background-color .18s ease, color .18s ease, opacity .18s ease;
+}
+.numeric-stepper-button:hover:not(:disabled) { transform: scale(1.08); background: hsl(var(--card)); color: hsl(var(--primary)); }
+.numeric-stepper-button:disabled { opacity: .28; cursor: not-allowed; }
+.country-flag { display: block; line-height: 1; filter: saturate(.9); font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.bubble-hover { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, border-color .25s ease, background-color .25s ease; }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .bubble-hover:hover { transform: translateY(-3px) scale(1.012); box-shadow: 0 14px 28px hsl(var(--foreground) / .09); }
+}
+.theme-cta { background: #f2e5d2 !important; color: #2b211b !important; border-color: #ddc8ae !important; }
+.theme-cta:hover { background: #f7ead9 !important; color: #241b16 !important; }
+.dark .theme-cta { background: #ead7bd !important; color: #2a1e17 !important; border-color: #b99670 !important; }
+.dark .theme-cta:hover { background: #f0dfc7 !important; color: #241912 !important; }

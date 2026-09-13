@@ -1,0 +1,143 @@
+{
+  "name": "University",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "University name"
+    },
+    "country": {
+      "type": "string",
+      "enum": [
+        "United States",
+        "United Kingdom",
+        "Canada",
+        "Germany",
+        "Australia",
+        "United Arab Emirates",
+        "India",
+        "Singapore",
+        "Netherlands",
+        "France",
+        "Switzerland",
+        "Sweden",
+        "Ireland",
+        "Japan",
+        "South Korea",
+        "Italy",
+        "Spain",
+        "New Zealand",
+        "China",
+        "Malaysia"
+      ]
+    },
+    "flag_emoji": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "website_url": {
+      "type": "string",
+      "description": "Main university website URL"
+    },
+    "global_ranking": {
+      "type": "number",
+      "description": "Approximate global ranking (QS/THE)"
+    },
+    "acceptance_rate": {
+      "type": "number",
+      "description": "Acceptance rate as percentage (0-100)"
+    },
+    "program_title": {
+      "type": "string"
+    },
+    "major_category": {
+      "type": "string",
+      "enum": [
+        "STEM",
+        "Business",
+        "Humanities"
+      ]
+    },
+    "specific_major": {
+      "type": "string"
+    },
+    "offered_majors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of offered Master's degree programs"
+    },
+    "tuition_annual_usd": {
+      "type": "number"
+    },
+    "min_cgpa_4": {
+      "type": "number",
+      "description": "Minimum CGPA on 4.0 scale"
+    },
+    "min_gre": {
+      "type": "number"
+    },
+    "min_gmat": {
+      "type": "number"
+    },
+    "min_ielts": {
+      "type": "number"
+    },
+    "min_toefl": {
+      "type": "number"
+    },
+    "min_work_months": {
+      "type": "number",
+      "default": 0
+    },
+    "prefers_research": {
+      "type": "boolean",
+      "default": false
+    },
+    "requirements_note": {
+      "type": "string"
+    },
+    "post_study_visa_years": {
+      "type": "number"
+    },
+    "avg_annual_living_cost_usd": {
+      "type": "number"
+    },
+    "median_starting_salary_usd": {
+      "type": "number"
+    },
+    "roi_rating": {
+      "type": "number",
+      "description": "1-5 rating"
+    }
+  },
+  "required": [
+    "name",
+    "country",
+    "program_title",
+    "major_category",
+    "specific_major",
+    "tuition_annual_usd"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
